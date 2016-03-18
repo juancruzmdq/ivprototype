@@ -34,6 +34,7 @@
 @property(nonatomic,strong) IBOutlet UILabel *lblText;
 @property(nonatomic,strong) IBOutlet UILabel *lblTextExpanded;
 @property(nonatomic,strong) IBOutlet UILabel *lblToEmail;
+@property(nonatomic,strong) IBOutlet UIButton *btnReply;
 
 
 @end
@@ -107,12 +108,14 @@
                          if (collapsed) {
                              self.lblDate.alpha = 1.0;
                              self.lblText.alpha = 1.0;
+                             self.btnReply.alpha = 0.0;
                              self.lblDateExpanded.alpha = 0.0;
                              self.lblToEmail.alpha = 0.0;
                              self.lblTextExpanded.alpha = 0.0;
                          }else{
                              self.lblDate.alpha = 0.0;
                              self.lblText.alpha = 0.0;
+                             self.btnReply.alpha = 1.0;
                              self.lblDateExpanded.alpha = 1.0;
                              self.lblToEmail.alpha = 1.0;
                              self.lblTextExpanded.alpha = 1.0;

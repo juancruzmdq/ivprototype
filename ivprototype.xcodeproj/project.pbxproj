@@ -51,6 +51,7 @@
 		5D60797FF3DA9BEFE7093DFD /* Pods-ivprototype.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ivprototype.release.xcconfig"; path = "Pods/Target Support Files/Pods-ivprototype/Pods-ivprototype.release.xcconfig"; sourceTree = "<group>"; };
 		A4019E3ECE4BF9365987356C /* libPods-ivprototypeTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ivprototypeTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6D8744CB00EB8681ED505EC /* Pods-ivprototype.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ivprototype.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ivprototype/Pods-ivprototype.debug.xcconfig"; sourceTree = "<group>"; };
+		EE3738A71C9C49E700B0DBA0 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		EEDF1B531C9762350023B80A /* ivprototype.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ivprototype.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEDF1B571C9762350023B80A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EEDF1B591C9762350023B80A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -177,6 +178,7 @@
 		EEDF1B561C9762350023B80A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				EE3738A71C9C49E700B0DBA0 /* README.md */,
 				EEDF1B621C9762350023B80A /* Assets.xcassets */,
 				EEDF1B671C9762350023B80A /* Info.plist */,
 				EEDF1B571C9762350023B80A /* main.m */,
