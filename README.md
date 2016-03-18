@@ -55,6 +55,8 @@ Params: don't accept parameters
 Result: JSON  with an Inbox object that contains a list of emails
 
 Scheme:
+
+```bash
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "id": "/",
@@ -99,21 +101,59 @@ Scheme:
         }
     }
 }
+```
 
 Example:
 
+```bash
 {
-"inbox": [
-{
-"uid": "1",
-"from": "matt@gmail.com",
-"to": "jhon@gmail.com",
-"subject": "subject 1",
-"text": "1) Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-"responseToUid": "",
-"dateTime": "Today"
-}]
+    "inbox": [
+    {
+        "uid": "1",
+        "from": "matt@gmail.com",
+        "to": "jhon@gmail.com",
+        "subject": "subject 1",
+        "text": "1) Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+        "responseToUid": "",
+        "dateTime": "Today"
+    }
+    ]
 }
+```
 
 
-## Project 
+## Project Structure
+
+The project is divided in three main folders. Libraries, ivprototype and ivprototypeTest
+
+### Libraries
+
+This folder contain a set of classes and helpers that can be reusable in other projects. These classes have been created as part of the prototype, so the functionality is very limited and can be improved.
+
+1. **Additions**: Currently this folder contains a NSString extension that add a method to validate if the string represent a valid email address.
+
+2. **Managers**: Contains the *FlowManager* class. This class is responsable of maintain a set of ViewControllers, each viewcontroller is the root view of a posible flow in the app. This class also allow to exchange these flows in the app's window.
+
+3. **Network**: A couple of classes that work as proxy of a remote service. 
+  - *RemoteService*: Map a remote HTTP service, is responsable of mantain and call a set of RemoteResources.
+  - *RemotResources*: represent an HTTP EndPoint for a remote service. Map the URL relative to the service root, mantain a set of parameters, and parse the server response, usually to map the response to the app model.
+
+4. **UI**: General classes related to the UI of an app.
+  - *DrawerViewController*: Is a ViewController that contains two subviews controllers, one of these controllers will be shown centered, and another the other one will be shown as background. The central view slides to right/left to the make visible the view in the back.
+  - *ReallySimpleProgress*: Simple view controller with a title and a spinner, used to indicate that there are some process runing in background.
+
+### ivprototype
+
+This folder cointains the classes of the prototype
+
+### ivprototypeTest
+
+Test cases for the prototype, include only two simple test, one for the email validator, and another one for the inbox resoruce creation
+
+
+
+
+
+
+
+

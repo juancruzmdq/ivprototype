@@ -57,6 +57,13 @@
 -(void)addResource:(nonnull RemoteResource *)resource forKey:(nonnull NSString*)key;
 
 /**
+ *  Return a resource with a specific key
+ *
+ *  @param key      key to store/retrieve this specific resource
+ */
+-(RemoteResource *)resourceforKey:(nonnull NSString*)key;
+
+/**
  *  Get a resource from this service
  *
  *  @param resourceKey key to retrieve an specific remote resource

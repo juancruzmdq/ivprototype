@@ -9,11 +9,17 @@
 /* Begin PBXBuildFile section */
 		668E51E2C2FB482C0386E737 /* libPods-ivprototypeTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A4019E3ECE4BF9365987356C /* libPods-ivprototypeTests.a */; };
 		6D1E17F1FD2B1134C7937299 /* libPods-ivprototype.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BEA303FF3619A9A79E2458C /* libPods-ivprototype.a */; };
+		EE3738BA1C9C713500B0DBA0 /* NSString+Validator.m in Sources */ = {isa = PBXBuildFile; fileRef = EE3738AC1C9C713500B0DBA0 /* NSString+Validator.m */; };
+		EE3738BB1C9C713500B0DBA0 /* FlowManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EE3738AF1C9C713500B0DBA0 /* FlowManager.m */; };
+		EE3738BC1C9C713500B0DBA0 /* RemoteResource.m in Sources */ = {isa = PBXBuildFile; fileRef = EE3738B21C9C713500B0DBA0 /* RemoteResource.m */; };
+		EE3738BD1C9C713500B0DBA0 /* RemoteService.m in Sources */ = {isa = PBXBuildFile; fileRef = EE3738B41C9C713500B0DBA0 /* RemoteService.m */; };
+		EE3738BE1C9C713500B0DBA0 /* DrawerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE3738B71C9C713500B0DBA0 /* DrawerViewController.m */; };
+		EE3738BF1C9C713500B0DBA0 /* ReallySimpleProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = EE3738B91C9C713500B0DBA0 /* ReallySimpleProgress.m */; };
+		EE3738C11C9C85EF00B0DBA0 /* emailValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = EE3738C01C9C85EF00B0DBA0 /* emailValidator.m */; };
 		EEDF1B581C9762350023B80A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EEDF1B571C9762350023B80A /* main.m */; };
 		EEDF1B5B1C9762350023B80A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EEDF1B5A1C9762350023B80A /* AppDelegate.m */; };
 		EEDF1B631C9762350023B80A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEDF1B621C9762350023B80A /* Assets.xcassets */; };
 		EEDF1B711C9762350023B80A /* ivprototypeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EEDF1B701C9762350023B80A /* ivprototypeTests.m */; };
-		EEDF1B911C9780B60023B80A /* FlowManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EEDF1B901C9780B60023B80A /* FlowManager.m */; };
 		EEDF1B971C9782490023B80A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEDF1B941C9782490023B80A /* LaunchScreen.storyboard */; };
 		EEDF1B981C9782490023B80A /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEDF1B951C9782490023B80A /* Login.storyboard */; };
 		EEDF1B991C9782490023B80A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEDF1B961C9782490023B80A /* Main.storyboard */; };
@@ -21,17 +27,12 @@
 		EEDF1B9F1C9787D30023B80A /* InboxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEDF1B9E1C9787D30023B80A /* InboxViewController.m */; };
 		EEDF1BA21C97A2D90023B80A /* Email.m in Sources */ = {isa = PBXBuildFile; fileRef = EEDF1BA11C97A2D90023B80A /* Email.m */; };
 		EEDF1BA51C97A2FB0023B80A /* EmailService.m in Sources */ = {isa = PBXBuildFile; fileRef = EEDF1BA41C97A2FB0023B80A /* EmailService.m */; };
-		EEDF1BAB1C97AC200023B80A /* RemoteService.m in Sources */ = {isa = PBXBuildFile; fileRef = EEDF1BAA1C97AC200023B80A /* RemoteService.m */; };
-		EEDF1BAE1C97AC300023B80A /* RemoteResource.m in Sources */ = {isa = PBXBuildFile; fileRef = EEDF1BAD1C97AC300023B80A /* RemoteResource.m */; };
 		EEDF1BB11C97B6AE0023B80A /* EmailFlowManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EEDF1BB01C97B6AE0023B80A /* EmailFlowManager.m */; };
 		EEDF1BBF1C98758F0023B80A /* Inbox.m in Sources */ = {isa = PBXBuildFile; fileRef = EEDF1BBE1C98758F0023B80A /* Inbox.m */; };
 		EEDF1BC31C989CCA0023B80A /* InboxTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EEDF1BC11C989CCA0023B80A /* InboxTableViewCell.m */; };
 		EEDF1BC71C98FBB00023B80A /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEDF1BC61C98FBB00023B80A /* DetailViewController.m */; };
 		EEDF1BD11C99E6370023B80A /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEDF1BD01C99E6370023B80A /* MenuViewController.m */; };
-		EEDF1BD51C9A049D0023B80A /* DrawerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEDF1BD41C9A049D0023B80A /* DrawerViewController.m */; };
-		EEDF1BDA1C9A05280023B80A /* NSString+Validator.m in Sources */ = {isa = PBXBuildFile; fileRef = EEDF1BD91C9A05280023B80A /* NSString+Validator.m */; };
 		EEDF1BDE1C9A15D20023B80A /* MailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EEDF1BDC1C9A15D20023B80A /* MailTableViewCell.m */; };
-		EEDF1BE31C9A462A0023B80A /* ReallySimpleProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = EEDF1BE21C9A462A0023B80A /* ReallySimpleProgress.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,19 @@
 		A4019E3ECE4BF9365987356C /* libPods-ivprototypeTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ivprototypeTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6D8744CB00EB8681ED505EC /* Pods-ivprototype.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ivprototype.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ivprototype/Pods-ivprototype.debug.xcconfig"; sourceTree = "<group>"; };
 		EE3738A71C9C49E700B0DBA0 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
+		EE3738AB1C9C713500B0DBA0 /* NSString+Validator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Validator.h"; sourceTree = "<group>"; };
+		EE3738AC1C9C713500B0DBA0 /* NSString+Validator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Validator.m"; sourceTree = "<group>"; };
+		EE3738AE1C9C713500B0DBA0 /* FlowManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlowManager.h; sourceTree = "<group>"; };
+		EE3738AF1C9C713500B0DBA0 /* FlowManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlowManager.m; sourceTree = "<group>"; };
+		EE3738B11C9C713500B0DBA0 /* RemoteResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemoteResource.h; sourceTree = "<group>"; };
+		EE3738B21C9C713500B0DBA0 /* RemoteResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemoteResource.m; sourceTree = "<group>"; };
+		EE3738B31C9C713500B0DBA0 /* RemoteService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemoteService.h; sourceTree = "<group>"; };
+		EE3738B41C9C713500B0DBA0 /* RemoteService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemoteService.m; sourceTree = "<group>"; };
+		EE3738B61C9C713500B0DBA0 /* DrawerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawerViewController.h; sourceTree = "<group>"; };
+		EE3738B71C9C713500B0DBA0 /* DrawerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawerViewController.m; sourceTree = "<group>"; };
+		EE3738B81C9C713500B0DBA0 /* ReallySimpleProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReallySimpleProgress.h; sourceTree = "<group>"; };
+		EE3738B91C9C713500B0DBA0 /* ReallySimpleProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReallySimpleProgress.m; sourceTree = "<group>"; };
+		EE3738C01C9C85EF00B0DBA0 /* emailValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = emailValidator.m; sourceTree = "<group>"; };
 		EEDF1B531C9762350023B80A /* ivprototype.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ivprototype.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEDF1B571C9762350023B80A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EEDF1B591C9762350023B80A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -61,8 +75,6 @@
 		EEDF1B6C1C9762350023B80A /* ivprototypeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ivprototypeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEDF1B701C9762350023B80A /* ivprototypeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ivprototypeTests.m; sourceTree = "<group>"; };
 		EEDF1B721C9762350023B80A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EEDF1B8F1C9780B60023B80A /* FlowManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlowManager.h; sourceTree = "<group>"; };
-		EEDF1B901C9780B60023B80A /* FlowManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlowManager.m; sourceTree = "<group>"; };
 		EEDF1B941C9782490023B80A /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EEDF1B951C9782490023B80A /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		EEDF1B961C9782490023B80A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -74,10 +86,6 @@
 		EEDF1BA11C97A2D90023B80A /* Email.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Email.m; sourceTree = "<group>"; };
 		EEDF1BA31C97A2FB0023B80A /* EmailService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmailService.h; sourceTree = "<group>"; };
 		EEDF1BA41C97A2FB0023B80A /* EmailService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmailService.m; sourceTree = "<group>"; };
-		EEDF1BA91C97AC200023B80A /* RemoteService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemoteService.h; sourceTree = "<group>"; };
-		EEDF1BAA1C97AC200023B80A /* RemoteService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemoteService.m; sourceTree = "<group>"; };
-		EEDF1BAC1C97AC300023B80A /* RemoteResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemoteResource.h; sourceTree = "<group>"; };
-		EEDF1BAD1C97AC300023B80A /* RemoteResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemoteResource.m; sourceTree = "<group>"; };
 		EEDF1BAF1C97B6AE0023B80A /* EmailFlowManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmailFlowManager.h; sourceTree = "<group>"; };
 		EEDF1BB01C97B6AE0023B80A /* EmailFlowManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmailFlowManager.m; sourceTree = "<group>"; };
 		EEDF1BBD1C98758F0023B80A /* Inbox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Inbox.h; sourceTree = "<group>"; };
@@ -88,14 +96,8 @@
 		EEDF1BC61C98FBB00023B80A /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		EEDF1BCF1C99E6370023B80A /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		EEDF1BD01C99E6370023B80A /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
-		EEDF1BD31C9A049D0023B80A /* DrawerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawerViewController.h; sourceTree = "<group>"; };
-		EEDF1BD41C9A049D0023B80A /* DrawerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawerViewController.m; sourceTree = "<group>"; };
-		EEDF1BD81C9A05280023B80A /* NSString+Validator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Validator.h"; sourceTree = "<group>"; };
-		EEDF1BD91C9A05280023B80A /* NSString+Validator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Validator.m"; sourceTree = "<group>"; };
 		EEDF1BDB1C9A15D20023B80A /* MailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MailTableViewCell.h; sourceTree = "<group>"; };
 		EEDF1BDC1C9A15D20023B80A /* MailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MailTableViewCell.m; sourceTree = "<group>"; };
-		EEDF1BE11C9A462A0023B80A /* ReallySimpleProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReallySimpleProgress.h; sourceTree = "<group>"; };
-		EEDF1BE21C9A462A0023B80A /* ReallySimpleProgress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReallySimpleProgress.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,9 +140,61 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		EE3738A91C9C713500B0DBA0 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				EE3738AA1C9C713500B0DBA0 /* Additions */,
+				EE3738AD1C9C713500B0DBA0 /* Managers */,
+				EE3738B01C9C713500B0DBA0 /* Network */,
+				EE3738B51C9C713500B0DBA0 /* UI */,
+			);
+			path = Libraries;
+			sourceTree = "<group>";
+		};
+		EE3738AA1C9C713500B0DBA0 /* Additions */ = {
+			isa = PBXGroup;
+			children = (
+				EE3738AB1C9C713500B0DBA0 /* NSString+Validator.h */,
+				EE3738AC1C9C713500B0DBA0 /* NSString+Validator.m */,
+			);
+			path = Additions;
+			sourceTree = "<group>";
+		};
+		EE3738AD1C9C713500B0DBA0 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				EE3738AE1C9C713500B0DBA0 /* FlowManager.h */,
+				EE3738AF1C9C713500B0DBA0 /* FlowManager.m */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		EE3738B01C9C713500B0DBA0 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				EE3738B11C9C713500B0DBA0 /* RemoteResource.h */,
+				EE3738B21C9C713500B0DBA0 /* RemoteResource.m */,
+				EE3738B31C9C713500B0DBA0 /* RemoteService.h */,
+				EE3738B41C9C713500B0DBA0 /* RemoteService.m */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		EE3738B51C9C713500B0DBA0 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				EE3738B61C9C713500B0DBA0 /* DrawerViewController.h */,
+				EE3738B71C9C713500B0DBA0 /* DrawerViewController.m */,
+				EE3738B81C9C713500B0DBA0 /* ReallySimpleProgress.h */,
+				EE3738B91C9C713500B0DBA0 /* ReallySimpleProgress.m */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
 		EEDF1B4A1C9762350023B80A = {
 			isa = PBXGroup;
 			children = (
+				EE3738A91C9C713500B0DBA0 /* Libraries */,
 				EEDF1B551C9762350023B80A /* ivprototype */,
 				EEDF1B6F1C9762350023B80A /* ivprototypeTests */,
 				EEDF1B541C9762350023B80A /* Products */,
@@ -163,8 +217,6 @@
 			children = (
 				EEDF1B591C9762350023B80A /* AppDelegate.h */,
 				EEDF1B5A1C9762350023B80A /* AppDelegate.m */,
-				EEDF1BD61C9A04DC0023B80A /* Additions */,
-				EEDF1BD21C9A046F0023B80A /* UICommon */,
 				EEDF1B8C1C977FF20023B80A /* API */,
 				EEDF1B8D1C977FF20023B80A /* Managers */,
 				EEDF1B8E1C977FF20023B80A /* Model */,
@@ -191,6 +243,7 @@
 			children = (
 				EEDF1B701C9762350023B80A /* ivprototypeTests.m */,
 				EEDF1B721C9762350023B80A /* Info.plist */,
+				EE3738C01C9C85EF00B0DBA0 /* emailValidator.m */,
 			);
 			path = ivprototypeTests;
 			sourceTree = "<group>";
@@ -219,10 +272,6 @@
 		EEDF1B8C1C977FF20023B80A /* API */ = {
 			isa = PBXGroup;
 			children = (
-				EEDF1BA91C97AC200023B80A /* RemoteService.h */,
-				EEDF1BAA1C97AC200023B80A /* RemoteService.m */,
-				EEDF1BAC1C97AC300023B80A /* RemoteResource.h */,
-				EEDF1BAD1C97AC300023B80A /* RemoteResource.m */,
 				EEDF1BA31C97A2FB0023B80A /* EmailService.h */,
 				EEDF1BA41C97A2FB0023B80A /* EmailService.m */,
 			);
@@ -232,8 +281,6 @@
 		EEDF1B8D1C977FF20023B80A /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				EEDF1B8F1C9780B60023B80A /* FlowManager.h */,
-				EEDF1B901C9780B60023B80A /* FlowManager.m */,
 				EEDF1BAF1C97B6AE0023B80A /* EmailFlowManager.h */,
 				EEDF1BB01C97B6AE0023B80A /* EmailFlowManager.m */,
 			);
@@ -249,26 +296,6 @@
 				EEDF1BBE1C98758F0023B80A /* Inbox.m */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		EEDF1BD21C9A046F0023B80A /* UICommon */ = {
-			isa = PBXGroup;
-			children = (
-				EEDF1BD31C9A049D0023B80A /* DrawerViewController.h */,
-				EEDF1BD41C9A049D0023B80A /* DrawerViewController.m */,
-				EEDF1BE11C9A462A0023B80A /* ReallySimpleProgress.h */,
-				EEDF1BE21C9A462A0023B80A /* ReallySimpleProgress.m */,
-			);
-			path = UICommon;
-			sourceTree = "<group>";
-		};
-		EEDF1BD61C9A04DC0023B80A /* Additions */ = {
-			isa = PBXGroup;
-			children = (
-				EEDF1BD81C9A05280023B80A /* NSString+Validator.h */,
-				EEDF1BD91C9A05280023B80A /* NSString+Validator.m */,
-			);
-			path = Additions;
 			sourceTree = "<group>";
 		};
 		EEDF1BF01C9B95A30023B80A /* Login */ = {
@@ -517,18 +544,18 @@
 				EEDF1B5B1C9762350023B80A /* AppDelegate.m in Sources */,
 				EEDF1BD11C99E6370023B80A /* MenuViewController.m in Sources */,
 				EEDF1BDE1C9A15D20023B80A /* MailTableViewCell.m in Sources */,
-				EEDF1BD51C9A049D0023B80A /* DrawerViewController.m in Sources */,
+				EE3738BD1C9C713500B0DBA0 /* RemoteService.m in Sources */,
 				EEDF1B581C9762350023B80A /* main.m in Sources */,
-				EEDF1BAB1C97AC200023B80A /* RemoteService.m in Sources */,
-				EEDF1BE31C9A462A0023B80A /* ReallySimpleProgress.m in Sources */,
-				EEDF1BDA1C9A05280023B80A /* NSString+Validator.m in Sources */,
+				EE3738BF1C9C713500B0DBA0 /* ReallySimpleProgress.m in Sources */,
+				EE3738BE1C9C713500B0DBA0 /* DrawerViewController.m in Sources */,
 				EEDF1BBF1C98758F0023B80A /* Inbox.m in Sources */,
+				EE3738BA1C9C713500B0DBA0 /* NSString+Validator.m in Sources */,
+				EE3738BC1C9C713500B0DBA0 /* RemoteResource.m in Sources */,
 				EEDF1B9F1C9787D30023B80A /* InboxViewController.m in Sources */,
-				EEDF1B911C9780B60023B80A /* FlowManager.m in Sources */,
 				EEDF1BC71C98FBB00023B80A /* DetailViewController.m in Sources */,
 				EEDF1B9C1C9785E20023B80A /* LoginViewController.m in Sources */,
 				EEDF1BA51C97A2FB0023B80A /* EmailService.m in Sources */,
-				EEDF1BAE1C97AC300023B80A /* RemoteResource.m in Sources */,
+				EE3738BB1C9C713500B0DBA0 /* FlowManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -537,6 +564,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EEDF1B711C9762350023B80A /* ivprototypeTests.m in Sources */,
+				EE3738C11C9C85EF00B0DBA0 /* emailValidator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

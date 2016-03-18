@@ -77,6 +77,11 @@
     [self.resources setObject:resource forKey:key];
 }
 
+-(RemoteResource *)resourceforKey:(nonnull NSString*)key{
+    return [self.resources objectForKey:key];
+}
+
+
 
 
 -(void)getResource:(NSString *)resourceKey

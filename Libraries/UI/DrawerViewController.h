@@ -23,7 +23,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 #pragma mark - Interface
 /**
- *  View controller that contains two subviews controllers, one for the center view, and another for the left view in the back. The central view slide to the make visible the other one
+ *  View controller that contains two subviews controllers, one of these controllers will be shown centered, and another the other one will be shown as background. The central view slides to right/left to the make visible the view in the back.
  */
 @interface DrawerViewController : UIViewController
 
