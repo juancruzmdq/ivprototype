@@ -125,6 +125,7 @@
         [self.tfPassword becomeFirstResponder];
         [self displayErrorAlertWithMessage:@"Please insert your Password."];
     }else{
+        // Acept login, switch to main (Inbox) flow
         [[EmailFlowManager sharedInstance] swithFlowToController:EmailFlowManagerMain];
     }
 }

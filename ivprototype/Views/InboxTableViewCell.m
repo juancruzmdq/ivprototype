@@ -93,12 +93,15 @@
     self.lblNames.text = @"";
     if (emails &&
         (emails.count > 0)) {
+        
+        // Get array of email destinations to join them in a string
         NSMutableArray * nameList = [NSMutableArray array];
         for (Email *email in self.emails) {
             [nameList insertObject:email.to atIndex:nameList.count];
         }
         self.lblNames.text = [nameList componentsJoinedByString:@","];
         
+        // Show info of the first mail, only for prototyping purpose
         Email*firstEmail = emails[0];
         self.lblSubject.text = firstEmail.subject;
         self.lblFirstLine.text = firstEmail.text;

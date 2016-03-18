@@ -34,7 +34,6 @@
 @property(nonatomic,strong) IBOutlet UILabel *lblText;
 @property(nonatomic,strong) IBOutlet UILabel *lblTextExpanded;
 @property(nonatomic,strong) IBOutlet UILabel *lblToEmail;
-@property(nonatomic,strong) IBOutlet UIImageView *imgAvatar;
 
 
 @end
@@ -90,7 +89,11 @@
 - (void)layoutSubviews
 {
     [super layoutSubviews];
+    
+    // Since cell's height is dinamic, we need to update the content view layout
     [self.contentView layoutIfNeeded];
+    
+    // This widht is use to calculate the
     self.lblTextExpanded.preferredMaxLayoutWidth = CGRectGetWidth(self.lblTextExpanded.frame);
 }
 ////////////////////////////////////////////////////////////////////////////////
@@ -102,17 +105,17 @@
     [UIView animateWithDuration:0.3
                      animations:^{
                          if (collapsed) {
-                             self.lblDate.hidden = FALSE;
-                             self.lblText.hidden = FALSE;
-                             self.lblDateExpanded.hidden = TRUE;
-                             self.lblToEmail.hidden = TRUE;
-                             self.lblTextExpanded.hidden = TRUE;
+                             self.lblDate.alpha = 1.0;
+                             self.lblText.alpha = 1.0;
+                             self.lblDateExpanded.alpha = 0.0;
+                             self.lblToEmail.alpha = 0.0;
+                             self.lblTextExpanded.alpha = 0.0;
                          }else{
-                             self.lblDate.hidden = TRUE;
-                             self.lblText.hidden = TRUE;
-                             self.lblDateExpanded.hidden = FALSE;
-                             self.lblToEmail.hidden = FALSE;
-                             self.lblTextExpanded.hidden = FALSE;
+                             self.lblDate.alpha = 0.0;
+                             self.lblText.alpha = 0.0;
+                             self.lblDateExpanded.alpha = 1.0;
+                             self.lblToEmail.alpha = 1.0;
+                             self.lblTextExpanded.alpha = 1.0;
                          }
 
                      }];
@@ -129,6 +132,7 @@
     self.lblDateExpanded.text = email.dateTime;
     self.lblToEmail.text = email.to;
     
+    // Assign static image, only for prototyping purpose
     if ([email.from isEqualToString:@"matt@gmail.com"]) {
         self.imgAvatar.image = [UIImage imageNamed:@"user1"];
     }else if ([email.from isEqualToString:@"jhon@gmail.com"]) {

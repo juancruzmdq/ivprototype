@@ -87,10 +87,13 @@ static NSString *MailCellIdentifier = @"MailTableViewCellId";
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
+    // Present fist subject as general subject for the conversation, only for prototyping purpose
     self.lblSubject.text = [(Email*)self.emails[0] subject];
     
+    // By default the latest email is selected and fully displayed
     self.selectedIndexPath = [NSIndexPath indexPathForRow:self.emails.count-1 inSection:0];
     
+    // Need to be able the cell height  dinamically
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.estimatedRowHeight = 70.0;
 
@@ -161,9 +164,11 @@ static NSString *MailCellIdentifier = @"MailTableViewCellId";
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     if (indexPath.row != self.selectedIndexPath.row) {
+        // If the user selected a new cell in the, change the collapsed state between old and new selection
         MailTableViewCell *newCell = [self.tableView cellForRowAtIndexPath:indexPath];
         MailTableViewCell *oldCell = [self.tableView cellForRowAtIndexPath:self.selectedIndexPath];
         
@@ -171,7 +176,10 @@ static NSString *MailCellIdentifier = @"MailTableViewCellId";
         oldCell.collapsed = TRUE;
     }
     
+    // Store new user selection
     self.selectedIndexPath = indexPath;
+    
+    // Raise an update in the table view to animate the collapse transition
     [self.tableView beginUpdates];
     [self.tableView endUpdates];
 }
@@ -179,17 +187,21 @@ static NSString *MailCellIdentifier = @"MailTableViewCellId";
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if ([indexPath compare:self.selectedIndexPath] == NSOrderedSame) {
+        // If this cell is selected by the user, the height is dinamic, to display all the content
+
+        // Create a prototype cell, to get the structure and autolayout definition, and use it to get the final height
         static MailTableViewCell *cell = nil;
         static dispatch_once_t onceToken;
-        
         dispatch_once(&onceToken, ^{
             cell = [self.tableView dequeueReusableCellWithIdentifier:MailCellIdentifier];
         });
         
+        // load data in the prototype cell and update layout
         [cell presentEmail:self.emails[indexPath.row]];
         cell.bounds = CGRectMake(0.0f, 0.0f, CGRectGetWidth(tableView.bounds), CGRectGetHeight(cell.bounds));
         [cell layoutIfNeeded];
         
+        // Get and return the final height of the prototype cell
         CGSize size = [cell.contentView systemLayoutSizeFittingSize:UILayoutFittingExpandedSize];
         return size.height+10;
 

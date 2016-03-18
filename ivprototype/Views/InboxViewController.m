@@ -36,6 +36,7 @@ static NSString *InboxCellIdentifier = @"InboxTableViewCellId";
 #pragma mark - Private Properties
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) IBOutlet NSDictionary *groupedInbox;
+@property (strong, nonatomic) IBOutlet NSDictionary *filterInbox;
 @property (strong, nonatomic) IBOutlet UITextField *tfSearch;
 
 @end
@@ -93,17 +94,23 @@ static NSString *InboxCellIdentifier = @"InboxTableViewCellId";
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    ReallySimpleProgress *loading = [ReallySimpleProgress progressWithTitle:@"Getting Inbox"];
-    [self presentViewController:loading animated:NO completion:nil];
     
-    [[EmailService sharedInstance] getInboxOnSuccess:^(Inbox * inbox) {
-        self.groupedInbox = [inbox groupedEmail];
-        [self.tableView reloadData];
-        [loading dismissViewControllerAnimated:YES completion:nil];
-    } onFailure:^(NSError * error) {
-        NSLog(@"error: %@",error);
-        [loading dismissViewControllerAnimated:YES completion:nil];
-    }];
+    // Only for the prototype, search inbox if the current inbox is empty
+    if (!self.groupedInbox) {
+        ReallySimpleProgress *loading = [ReallySimpleProgress progressWithTitle:@"Getting Inbox"];
+        [self presentViewController:loading animated:NO completion:nil];
+        
+        // Retrieve Emails. from remote service, and display conversations
+        [[EmailService sharedInstance] getInboxOnSuccess:^(Inbox * inbox) {
+            self.groupedInbox = [inbox groupedEmail];
+            self.filterInbox = self.groupedInbox;
+            [self.tableView reloadData];
+            [loading dismissViewControllerAnimated:YES completion:nil];
+        } onFailure:^(NSError * error) {
+            NSLog(@"error: %@",error);
+            [loading dismissViewControllerAnimated:YES completion:nil];
+        }];
+    }
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -117,7 +124,7 @@ static NSString *InboxCellIdentifier = @"InboxTableViewCellId";
     if ([[segue identifier] isEqualToString:@"detail"]){
         DetailViewController *detail = segue.destinationViewController;
         NSIndexPath *selectedRowIndex = [self.tableView indexPathForSelectedRow];
-        detail.emails = self.groupedInbox.allValues[selectedRowIndex.row];
+        detail.emails = self.filterInbox.allValues[selectedRowIndex.row];
     }
 }
 ////////////////////////////////////////////////////////////////////////////////
@@ -134,9 +141,23 @@ static NSString *InboxCellIdentifier = @"InboxTableViewCellId";
 
 -(IBAction)searchChange:(id)sender{
     NSLog(@"Filter: %@",self.tfSearch.text);
+    
+    if ([self.tfSearch.text isEqualToString:@""]) {
+        self.filterInbox = self.groupedInbox;
+    }else{
+        // Simulate search, only display de fist conversation of the inbox
+        if (self.groupedInbox.allKeys > 0) {
+            id fistKey = self.groupedInbox.allKeys[0];
+            self.filterInbox = @{fistKey:self.groupedInbox[fistKey]};
+        }else{
+            self.filterInbox = self.groupedInbox;
+        }
+    }
+    [self.tableView reloadData];
 }
 
 -(IBAction)tapDrawerButton:(id)sender{
+    // Show/Hide left menu
     [[[EmailFlowManager sharedInstance] drawerViewController] toggleDrawer];
 }
 
@@ -156,7 +177,7 @@ static NSString *InboxCellIdentifier = @"InboxTableViewCellId";
 #pragma mark - UITableViewDataSource Delegate methods
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return [self.groupedInbox.allKeys count];
+    return [self.filterInbox.allKeys count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -165,7 +186,7 @@ static NSString *InboxCellIdentifier = @"InboxTableViewCellId";
     
     
     // Configure Cell
-    [cell presentEmails:self.groupedInbox.allValues[indexPath.row]];
+    [cell presentEmails:self.filterInbox.allValues[indexPath.row]];
     
     return cell;
     
