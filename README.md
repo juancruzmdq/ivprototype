@@ -132,19 +132,116 @@ This folder contain a set of classes and helpers that can be reusable in other p
 
 1. **Additions**: Currently this folder contains a NSString extension that add a method to validate if the string represent a valid email address.
 
+example:
+
+```objective-c
+    if ([@"tom@gmail.com" isValidEmail]) {
+        NSLog(@"Valid Email")
+    }
+```
+
 2. **Managers**: Contains the *FlowManager* class. This class is responsable of maintain a set of ViewControllers, each viewcontroller is the root view of a posible flow in the app. This class also allow to exchange these flows in the app's window.
+
+```objective-c
+    UIViewControler *vc1 = ....; //set with an instance of UIViewController
+    UIViewControler *vc2 = ....; //set with an instance of UIViewController
+    UIWindow *win = ....; //set with the main app's window
+
+    FlowManager *fm = [[FlowManager alloc] init];
+    [fm setWindow:win];
+    [fm setFlow:@"one" withViewController:vc1];
+    [fm setFlow:@"two" withViewController:vc2];
+
+    [fm swithFlowToController:@"one"];
+
+    // In other place of the app, swith to other flow
+    [fm swithFlowToController:@"two"];
+    
+```
+
 
 3. **Network**: A couple of classes that work as proxy of a remote service. 
   - *RemoteService*: Map a remote HTTP service, is responsable of mantain and call a set of RemoteResources.
   - *RemotResources*: represent an HTTP EndPoint for a remote service. Map the URL relative to the service root, mantain a set of parameters, and parse the server response, usually to map the response to the app model.
 
+```objective-c
+
+    RemoteService *serv = [[RemoteService alloc] initWithBaseURL:@"http://jsonplaceholder.typicode.com"];
+
+    RemoteResource * posts = [[RemoteResource alloc] init];
+    [posts setPath:@"/posts"];
+    // Set params if need
+    // [posts setParams:@{@"key":@"value"}]; 
+    [posts setParse:^ id (id response) {
+        // Do something with the response
+        return response;
+    }];
+
+    [serv addResource:posts forKey:@"posts"];
+
+    [serv getResource:@"posts"
+        onSuccess:^(id _Nonnull result) {
+            NSLog(@"Posts: %@", result);
+        } onFailure:^(NSError * _Nonnull error) {
+            NSLog(@"Posts Error: %@", error);
+    }];
+
+```
+
 4. **UI**: General classes related to the UI of an app.
   - *DrawerViewController*: Is a ViewController that contains two subviews controllers, one of these controllers will be shown centered, and another the other one will be shown as background. The central view slides to right/left to the make visible the view in the back.
+```objective-c
+
+    DrawerViewController *dw = [DrawerViewController drawerWithCenterViewController:self.inboxViewController
+leftMenuViewController:self.menuViewController];
+    dw.slideDistance = 255; // Set slide distance if need
+
+    // Show left menu
+    [dw toggleDrawer];
+
+    // When the left view is visible, hide Left Menu
+    [dw toggleDrawer];
+    
+```
+
   - *ReallySimpleProgress*: Simple view controller with a title and a spinner, used to indicate that there are some process runing in background.
+```objective-c
+
+    ReallySimpleProgress *loading = [ReallySimpleProgress progressWithTitle:@"Doing something"];
+    [self presentViewController:loading animated:NO completion:nil];
+
+    // Retrieve Emails. from remote service, and display conversations
+    double delayInSeconds = 0.5;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+
+        [loading dismissViewControllerAnimated:YES completion:nil];
+
+    });
+
+```
 
 ### ivprototype
 
 This folder cointains the classes of the prototype
+
+1. **API**: EmailService is a RemoteService extension to comunicate with the Email backend. Create a RemoteResource to get info from the endpoint "inbox", and parse the JSON response to the app model.
+
+2. **Managers**: EmailFlowManager is an extension of FlowManager. This class contains to flows:
+  - *EmailFlowManagerLogin*: This is the initial flow of the app, the app will present *LoginViewController* when needed validate the user identity. in the case of this prototype
+  - *EmailFlowManagerMain*:This is the mail flow of the app. Present the *InboxViewController* view in a navigation bar, with *MenuViewController* as left menu in the back.
+
+3. **Model**:
+  - *Inbox*: Entity with a list of Emails. This list can be grouped in conversations, to group it use the responseToUid to identify which emails are linked. 
+  - *Email*: Entity to represesnt an Email in the app. For this prototype only have the email properties.
+
+4. **Storyboards**:
+  - *LaunchScreen*: Include the ViewController used as Splash for the app launch. 
+  - *Login*: Include LoginViewController's view 
+  - *Main*: Include the views for the Inbox master-detail, and the View for the lateral menu.
+
+5. **Views**: Folder with sets of views controllers used in the app
+
 
 ### ivprototypeTest
 

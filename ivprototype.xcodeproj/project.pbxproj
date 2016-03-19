@@ -241,8 +241,8 @@
 		EEDF1B6F1C9762350023B80A /* ivprototypeTests */ = {
 			isa = PBXGroup;
 			children = (
-				EEDF1B701C9762350023B80A /* ivprototypeTests.m */,
 				EEDF1B721C9762350023B80A /* Info.plist */,
+				EEDF1B701C9762350023B80A /* ivprototypeTests.m */,
 				EE3738C01C9C85EF00B0DBA0 /* emailValidator.m */,
 			);
 			path = ivprototypeTests;
@@ -290,10 +290,10 @@
 		EEDF1B8E1C977FF20023B80A /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				EEDF1BA01C97A2D90023B80A /* Email.h */,
-				EEDF1BA11C97A2D90023B80A /* Email.m */,
 				EEDF1BBD1C98758F0023B80A /* Inbox.h */,
 				EEDF1BBE1C98758F0023B80A /* Inbox.m */,
+				EEDF1BA01C97A2D90023B80A /* Email.h */,
+				EEDF1BA11C97A2D90023B80A /* Email.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
