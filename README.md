@@ -50,9 +50,9 @@ This Service has a public endponit to retrieve a list of emails.
 
 ### [Inbox endpoint](http://hook.io/juancruzmdq-gmail-com/inbox)
 
- -URL: http://hook.io/juancruzmdq-gmail-com/inbox
- -Params: don't accept parameters
- -Result: JSON  with an Inbox object that contains a list of emails
+ - URL: http://hook.io/juancruzmdq-gmail-com/inbox
+ - Params: don't accept parameters
+ - Result: JSON  with an Inbox object that contains a list of emails
 
 Scheme:
 
