@@ -228,12 +228,12 @@ This folder cointains the classes of the prototype
 1. **API**: EmailService is a RemoteService extension to comunicate with the Email backend. Create a RemoteResource to get info from the endpoint "inbox", and parse the JSON response to the app model.
 
 2. **Managers**: EmailFlowManager is an extension of FlowManager. This class contains to flows:
-  - *EmailFlowManagerLogin*: This is the initial flow of the app, the app will present *LoginViewController* when needed validate the user identity. in the case of this prototype
-  - *EmailFlowManagerMain*:This is the mail flow of the app. Present the *InboxViewController* view in a navigation bar, with *MenuViewController* as left menu in the back.
+  - *EmailFlowManagerLogin*: This is the initial flow of the app, the app will present *LoginViewController* when needed validate the user identity. in the case of this prototype is shown when the user launch the app
+  - *EmailFlowManagerMain*:This is the main flow of the app. Present the *InboxViewController* view in a navigation bar, with *MenuViewController* as left menu in the back.
 
 3. **Model**:
-  - *Inbox*: Entity with a list of Emails. This list can be grouped in conversations, to group it use the responseToUid to identify which emails are linked. 
-  - *Email*: Entity to represesnt an Email in the app. For this prototype only have the email properties.
+  - *Inbox*: Entity with a list of Emails. This list can be grouped in conversations. To group it, the class use the responseToUid to identify which emails are linked. 
+  - *Email*: Entity that represent an Email in the app. For this prototype only have the email properties.
 
 4. **Storyboards**:
   - *LaunchScreen*: Include the ViewController used as Splash for the app launch. 
